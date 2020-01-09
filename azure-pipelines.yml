@@ -9,4 +9,8 @@ variables:
 
 steps:
 - bash: |
-    echo "Secret retrieved is: $(./var_value_get_REST.sh host/client/node1 $(client-node1-api-key) secrets/db-username)"
+    export DB_UNAME=$(./var_value_get_REST.sh host/client/node1 $(client-node1-api-key) secrets/db-username)
+    export DB_PWD=$(./var_value_get_REST.sh host/client/node1 $(client-node1-api-key) secrets/db-password)
+    echo "Secrets retrieved:"
+    echo "  DB_UNAME: $DB_UNAME" 
+    echo "  DB_PWD: $DB_PWD" 
