@@ -8,5 +8,5 @@ variables:
 - group: azure-build-vars
 
 steps:
-- script: echo Secret retrieved is: $(./var_value_get_REST.sh host/client/node1 $(client-node1-api-key) secrets/db-username)
+- script: echo "Secret retrieved is: $(./var_value_get_REST.sh host/client/node1 $(client-node1-api-key) secrets/db-username)"
 
