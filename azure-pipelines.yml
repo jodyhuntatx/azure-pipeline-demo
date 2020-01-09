@@ -13,5 +13,5 @@ variables:
 - group: azure-build-vars
 
 steps:
-- script: var_value_get_REST.sh host/client/node1 $(client-node1-api-key) secrets/db-username
+- script: ./var_value_get_REST.sh host/client/node1 $(client-node1-api-key) secrets/db-username
 
