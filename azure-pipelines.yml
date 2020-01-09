@@ -9,5 +9,5 @@ variables:
 
 steps:
 - bash: |
-    var_value=$(./var_value_get_REST.sh host/client/node1 $(client-node1-api-key) secrets/db-username)"
+    var_value=$(./var_value_get_REST.sh host/client/node1 $(client-node1-api-key) secrets/db-username)
     echo "Secret retrieved is: $(var_value)"
