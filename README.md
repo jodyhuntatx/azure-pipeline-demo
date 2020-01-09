@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/JodyHunt/DAP%20Demo/_apis/build/status/jodyhuntatx.azure-pipeline-demo?branchName=master)](https://dev.azure.com/JodyHunt/DAP%20Demo/_build/latest?definitionId=2&branchName=master)
 
 # Contributing
 
