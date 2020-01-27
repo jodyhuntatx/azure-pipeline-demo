@@ -1,4 +1,11 @@
 trigger:
+- task: GetConjurSecret@1
+  inputs:
+    conjurapplianceurl: 'https://jodytest.eastus.cloudapp.azure.com'
+    conjuraccount: 'dev'
+    conjurusername: 'host/client/node1'
+    conjurapikey: '2ka3kd83szp9941j6d7a7vqc7s41xkc9221f3rhhz3n6z9jxm13g82'
+    ignoreSsl: true
 - master
 
 pool:
