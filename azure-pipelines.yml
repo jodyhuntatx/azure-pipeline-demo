@@ -6,8 +6,8 @@ variables:
 
 steps:
 - bash: |
-    export DB_UNAME=$(./get_conjur_secret.sh host/client/node1 $(client-node1-api-key) secrets/db-username)
-    export DB_PWD=$(./get_conjur_secret.sh host/client/node1 $(client-node1-api-key) secrets/db-password)
+    export DB_UNAME=$(./get_conjur_secret.sh $(app-name) $(app-api-key) $(db-username) )
+    export DB_PWD=$(./get_conjur_secret.sh $(app-name) $(app-api-key) $(db-password) )
     echo "Secrets retrieved:"
     echo "  DB_UNAME: $DB_UNAME" 
     echo "  DB_PWD: $DB_PWD" 
