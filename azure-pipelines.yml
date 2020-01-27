@@ -6,8 +6,8 @@ variables:
 
 steps:
 - bash: |
-    export DB_UNAME=$(./var_value_get_REST.sh host/client/node1 $(client-node1-api-key) secrets/db-username)
-    export DB_PWD=$(./var_value_get_REST.sh host/client/node1 $(client-node1-api-key) secrets/db-password)
+    export DB_UNAME=$(./get_conjur_secret.sh host/client/node1 $(client-node1-api-key) secrets/db-username)
+    export DB_PWD=$(./get_conjur_secret.sh host/client/node1 $(client-node1-api-key) secrets/db-password)
     echo "Secrets retrieved:"
     echo "  DB_UNAME: $DB_UNAME" 
     echo "  DB_PWD: $DB_PWD" 
