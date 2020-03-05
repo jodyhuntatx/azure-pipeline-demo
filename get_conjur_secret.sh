@@ -3,8 +3,9 @@
 # Authenticates as host identity with API key and gets value of a specified variable
 #
 
-export CONJUR_APPLIANCE_URL=https://jodytest.eastus.cloudapp.azure.com
-export CONJUR_ACCOUNT=dev
+# URL and ACCOUNT are taken from build vars in library
+#export CONJUR_APPLIANCE_URL=https://jodytest.eastus.cloudapp.azure.com
+#export CONJUR_ACCOUNT=dev
 export CONJUR_CERT_FILE=./conjur-dev.pem
 
 ################  MAIN   ################
