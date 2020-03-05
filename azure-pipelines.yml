@@ -6,6 +6,7 @@ variables:
 
 steps:
 - bash: |
+    env
     export DB_UNAME=$(./get_conjur_secret.sh $(app-name) $(app-api-key) $(db-username) )
     export DB_PWD=$(./get_conjur_secret.sh $(app-name) $(app-api-key) $(db-password) )
     echo "Secrets retrieved:"
