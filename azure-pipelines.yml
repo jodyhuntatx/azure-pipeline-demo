@@ -1,5 +1,4 @@
-pool:
-  vmImage: 'ubuntu-latest'
+pool: DAPdemo
 
 variables:
 - group: azure-build-vars
