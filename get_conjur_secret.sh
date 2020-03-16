@@ -4,10 +4,10 @@
 #
 
 # URL and ACCOUNT are taken from build vars in library
-export CONJUR_APPLIANCE_URL=https://ConjurMaster2.northcentralus.cloudapp.azure.com
-export CONJUR_ACCOUNT=dev
+#export CONJUR_APPLIANCE_URL=https://ConjurMaster2.northcentralus.cloudapp.azure.com
+#export CONJUR_ACCOUNT=dev
+#export AUTHN_AZ_ID=sub1
 export CONJUR_CERT_FILE=./conjur-dev.pem
-export AUTHN_AZ_ID=sub1
 
 ################  MAIN   ################
 # Takes 2 arguments:
