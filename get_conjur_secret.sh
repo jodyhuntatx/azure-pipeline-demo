@@ -4,8 +4,8 @@
 #
 
 # URL and ACCOUNT are taken from build vars in library
-#export CONJUR_APPLIANCE_URL=https://jodytest.eastus.cloudapp.azure.com
-#export CONJUR_ACCOUNT=dev
+export CONJUR_APPLIANCE_URL=https://ConjurMaster2.northcentralus.cloudapp.azure.com
+export CONJUR_ACCOUNT=dev
 export CONJUR_CERT_FILE=./conjur-dev.pem
 export AUTHN_AZ_ID=sub1
 
@@ -15,7 +15,7 @@ export AUTHN_AZ_ID=sub1
 #   $2 - name of variable to value to return
 #
 main() {
-  if [[ $# -ne 3 ]] ; then
+  if [[ $# -ne 2 ]] ; then
     printf "\nUsage: %s <host-identity> <variable-name>\n" $0
     exit -1
   fi
@@ -56,14 +56,14 @@ authn_host() {
 #    echo "Azure token: $azure_access_token"
   fi
 
-  local encoded_host_id=$(urlify "$host_id")
+  local encoded_host_id=$(urlify "host/$host_id")
   authn_azure_response=$(curl -s -X POST \
 	-H "Content-Type: application/x-www-form-urlencoded" \
 	--cacert $CONJUR_CERT_FILE \
 	--data "jwt=$azure_access_token" \
-	$CONJUR_APPLIANCE_URL/authn-azure/$AUTHN_AZ_ID/$CONJUR_ACCOUNT/${encoded_hostid}/authenticate)
-  access_token=$(echo -n $response| base64 | tr -d '\r\n')
-  echo "$access_token"
+	$CONJUR_APPLIANCE_URL/authn-azure/$AUTHN_AZ_ID/$CONJUR_ACCOUNT/${encoded_host_id}/authenticate)
+  conjur_access_token=$(echo -n $authn_azure_response| base64 | tr -d '\r\n')
+  echo "$conjur_access_token"
 }
 
 ################
