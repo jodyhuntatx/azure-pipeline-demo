@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 #
 # Authenticates using Azure access token and gets value of a specified variable
 #
