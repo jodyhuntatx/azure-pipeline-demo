@@ -1,4 +1,4 @@
-pool: DAPdemo
+pool: NewPool
 
 variables:
 - group: azure-build-vars
