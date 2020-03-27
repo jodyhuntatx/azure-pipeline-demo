@@ -4,7 +4,14 @@ variables:
 - group: azure-build-vars
 
 steps:
+- task: DownloadSecureFile@1
+  name: conjur-cert
+  displayName: 'Download CA certificate'
+  inputs:
+    secureFile: 'conjur-dev.pem'
+
 - bash: |
+    cat $(conjur-cert.secureFilePath) > $(CONJUR_CERT_FILE)
     export DB_UNAME=$(./get_conjur_secret.sh $(app-name) $(db-username) )
     export DB_PWD=$(./get_conjur_secret.sh $(app-name) $(db-password) )
     echo "Secrets retrieved:"

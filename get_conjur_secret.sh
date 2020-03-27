@@ -3,11 +3,7 @@
 # Authenticates using Azure access token and gets value of a specified variable
 #
 
-# URL and ACCOUNT are taken from build vars in library
-#export CONJUR_APPLIANCE_URL=https://ConjurMaster2.northcentralus.cloudapp.azure.com
-#export CONJUR_ACCOUNT=dev
-#export AUTHN_AZ_ID=sub1
-export CONJUR_CERT_FILE=./conjur-dev.pem
+# URL, ACCOUNT and CONJUR_CERT_FILE values are taken from build vars in library
 
 ################  MAIN   ################
 # Takes 2 arguments:
