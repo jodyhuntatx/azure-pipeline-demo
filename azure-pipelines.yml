@@ -1,7 +1,8 @@
 pool: NewPool
 
 variables:
-- group: azure-build-vars
+- group: build-vars-common
+- group: build-vars-managed-id
 
 steps:
 - task: DownloadSecureFile@1
