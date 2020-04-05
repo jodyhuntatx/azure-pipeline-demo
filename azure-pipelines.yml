@@ -13,8 +13,8 @@ steps:
 
 - bash: |
     cat $(conjurCert.secureFilePath) > $(CONJUR_CERT_FILE)
-    export DB_UNAME=$(./get_conjur_secret.sh $(app-name) $(db-username) )
-    export DB_PWD=$(./get_conjur_secret.sh $(app-name) $(db-password) )
+    export DB_UNAME=$(./get_conjur_secret.sh $(CONJUR_AUTHN_LOGIN) $(db-username) )
+    export DB_PWD=$(./get_conjur_secret.sh $(CONJUR_AUTHN_LOGIN) $(db-password) )
     echo "Secrets retrieved:"
     echo "  DB_UNAME: $DB_UNAME" 
     echo "  DB_PWD: $DB_PWD" 
