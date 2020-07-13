@@ -16,6 +16,6 @@ steps:
     export TF_VAR_BOT_NAME=$(./get_conjur_secret.sh $(CONJUR_AUTHN_LOGIN) $(botName) )
     export TF_VAR_BOT_TOKEN=$(./get_conjur_secret.sh $(CONJUR_AUTHN_LOGIN) $(botToken) )
     echo "Secrets retrieved:"
-    echo "  botName: $TF_VAR_BOT_NAME" 
-    echo "  botToken: $TF_VAR_BOT_TOKEN" 
+    echo "  botName: $TF_VAR_GITBOT_NAME" 
+    echo "  botToken: $TF_VAR_GITBOT_TOKEN" 
     terraform apply
