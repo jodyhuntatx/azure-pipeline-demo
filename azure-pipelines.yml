@@ -2,7 +2,7 @@ pool: NewPool
 
 variables:
 - group: build-vars-common
-- group: build-vars-api-key
+- group: build-vars-apikey
 
 steps:
 - task: DownloadSecureFile@1
