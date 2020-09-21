@@ -2,7 +2,7 @@ pool: NewPool
 
 variables:
 - group: build-vars-common
-- group: build-vars-tf
+- group: build-vars-rgroup
 
 steps:
 - task: DownloadSecureFile@1
