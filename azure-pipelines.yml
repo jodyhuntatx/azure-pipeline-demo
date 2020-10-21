@@ -12,6 +12,7 @@ steps:
     secureFile: 'conjur-dev.pem'
 
 - bash: |
+    set -x
     cat $(conjurCert.secureFilePath) > $(CONJUR_CERT_FILE)
     export TF_VAR_GITBOT_UNAME=$(./get_conjur_secret.sh $(CONJUR_AUTHN_LOGIN) $(GitbotUname) )
     export TF_VAR_GITBOT_TOKEN=$(./get_conjur_secret.sh $(CONJUR_AUTHN_LOGIN) $(GitbotToken) )
