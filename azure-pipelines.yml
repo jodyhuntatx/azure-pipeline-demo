@@ -12,11 +12,10 @@ steps:
     secureFile: 'conjur-dev.pem'
 
 - bash: |
-    set -x
     cat $(conjurCert.secureFilePath) > $(CONJUR_CERT_FILE)
     export TF_VAR_AWSAccessKey=$(./get_conjur_secret.sh $(CONJUR_AUTHN_LOGIN) $(AWSAccessKey) )
     export TF_VAR_AWSSecretKey=$(./get_conjur_secret.sh $(CONJUR_AUTHN_LOGIN) $(AWSSecretKey) )
     echo "Secrets retrieved:"
-    echo "  botName: $TF_VAR_AWSAccessKey" 
-    echo "  botToken: $TF_VAR_AWSSecretKey" 
+    echo "  AWS Access Key: $TF_VAR_AWSAccessKey" 
+    echo "  AWS Secret Key: $TF_VAR_AWSSecretKey" 
     terraform apply
