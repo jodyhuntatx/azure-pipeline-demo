@@ -53,7 +53,7 @@ authn_host() {
   fi
 
   local encoded_host_id=$(urlify "$host_id")
-  authn_azure_response=$(curl -s -X POST \
+  authn_azure_response=$(curl -sk -X POST \
 	-H "Content-Type: application/x-www-form-urlencoded" \
 	--cacert $CONJUR_CERT_FILE \
 	--data "jwt=$azure_access_token" \
