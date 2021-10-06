@@ -13,6 +13,7 @@ steps:
 
 - bash: |
     cat $(conjurCert.secureFilePath) > $(CONJUR_CERT_FILE)
+    set -x
     export TF_VAR_AWSAccessKey=$(./get_conjur_secret.sh $(CONJUR_AUTHN_LOGIN) $(AWSAccessKey) )
     export TF_VAR_AWSSecretKey=$(./get_conjur_secret.sh $(CONJUR_AUTHN_LOGIN) $(AWSSecretKey) )
     echo "Secrets retrieved:"
